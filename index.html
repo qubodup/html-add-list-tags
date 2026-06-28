@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><title>Add HTML UL OL LI list tags to without reformatting, no ads no subscription no bloat</title>
+<body>
+
+<select id="listType">
+  <option value="ul">ul</option>
+  <option value="ol">ol</option>
+</select>
+
+<button onclick="convert()">Convert</button>
+
+<br><br>
+
+<textarea id="input" rows="12" cols="100"></textarea>
+
+<br><br>
+
+<textarea id="output" rows="12" cols="100" readonly></textarea>
+
+<script>
+function convert() {
+  const type = document.getElementById("listType").value;
+  const input = document.getElementById("input").value;
+
+  document.getElementById("output").value =
+    "<" + type + "><li>" +
+    input.replace(/\r?\n/g, "</li>\n<li>") +
+    "</li></" + type + ">";
+}
+</script>
+<p><a href="https://github.com/qubodup/html-add-list-tags">code over here</a></p>
+</body>
+</html>
